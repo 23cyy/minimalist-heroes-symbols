@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain America Shield</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1f1f1f, #4a4a4a);
+            overflow: hidden;
+        }
+
+        .shield {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center,
+                #0358d9 0%, #0358d9 18%,
+                #ff0000 20%, #ff0000 35%,
+                #eae5e0 35%, #eae5e0 50%,
+                #e01f1f 50%, #ff0000 100%
+            );
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 60px rgba(255, 0, 0, 0.4), 0 0 60px rgba(0, 0, 255, 0.4);
+            animation: shield-glow 3s infinite alternate;
+        }
+
+        .center-star {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #eae5e0;
+            clip-path: polygon(
+                50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%
+            );
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: star-pulse 1.5s infinite alternate;
+        }
+
+        @keyframes shield-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 60px rgba(255, 0, 0, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 90px rgba(22, 103, 196, 0.5);
+            }
+        }
+
+        @keyframes star-pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-button {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            background: #201f1f;
+            border: 2px solid #eae5e0;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 50px;
+            color: #eae5e0;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .radio-button:hover {
+            background: #eae5e0;
+            color: #4a4a4a;
+        }
+    </style>
+</head>
+<body>
+    <div class="shield">
+        <div class="center-star"></div>
+    </div>
+    <br><br><br>
+    <div class="buttons-container">
+        <a href="captain_america.html" class="radio-button"></a>
+        <a href="thor.html" class="radio-button"></a>
+        <a href="hawkeye.html" class="radio-button"></a>
+    </div>
+</body>
+</html>

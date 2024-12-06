@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mjolnir Symbol - Thor's Hammer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #hammer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 160px;
+            height: 350px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #hammer-head {
+            width: 160px;
+            height: 90px;
+            background: linear-gradient(145deg, #666, #333);
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), inset 0 0 15px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: head-glow 2s infinite alternate;
+        }
+
+        #hammer-symbol {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(78, 82, 88, 0.5));
+            clip-path: polygon(50% 0%, 60% 35%, 95% 35%, 68% 57%, 78% 91%, 50% 70%, 22% 91%, 32% 57%, 5% 35%, 40% 35%);
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: symbol-pulse 1.5s infinite alternate;
+        }
+
+        #hammer-handle {
+            width: 25px;
+            height: 230px;
+            background: linear-gradient(135deg, #444, #222);
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 0px 0px 10px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .stripe {
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(135deg, #555, #333);
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Glow effect animation for the hammer head */
+        @keyframes head-glow {
+            0% {
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 60px rgba(22, 103, 255, 0.5);
+            }
+        }
+
+        /* Pulse effect animation for the hammer symbol */
+        @keyframes symbol-pulse {
+            0% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                transform: translateX(-50%) scale(1.1);
+                box-shadow: 0 0 60px rgba(22, 103, 255, 0.5);
+            }
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-button {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            background: #201f1f;
+            border: 2px solid #eae5e0;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 50px;
+            color: #eae5e0;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .radio-button:hover {
+            background: #eae5e0;
+            color: #4a4a4a;
+        }
+    </style>
+</head>
+<body>
+    <div id="hammer-container">
+        <div id="hammer-head">
+            <div id="hammer-symbol"></div>
+        </div>
+        <div id="hammer-handle">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+        </div>
+    </div>
+    <br><br>
+    <div class="buttons-container">
+        <a href="captain_america.html" class="radio-button"></a>
+        <a href="thor.html" class="radio-button"></a>
+        <a href="hawkeye.html" class="radio-button"></a>
+    </div>
+</body>
+</html>
